@@ -209,8 +209,8 @@
 			/* La imagen se repetirá en toda la página */
 			background-size: auto;
 			/* Ajusta el tamaño de la imagen según sea necesario */
-			opacity: .8;
-			/* Ajusta la opacidad de la imagen (puedes cambiarlo si lo deseas) */
+			opacity: 0.8;
+			/* Ajusta la opacidad de la imagen */
 			z-index: -2;
 			/* Asegura que la imagen de fondo esté detrás de la capa oscura */
 		}
@@ -224,9 +224,40 @@
 			right: 0;
 			bottom: 0;
 			background-color: rgba(255, 0, 0, 0.6);
-			/* Capa oscura, puedes ajustar la opacidad aquí */
+			/* Capa oscura */
 			z-index: -1;
 			/* Asegura que la capa oscura esté sobre la imagen de fondo */
+		}
+
+		.bouncing-images {
+			position: absolute;
+			/* Permite que las imágenes se posicionen detrás del contenido */
+			width: 100%;
+			/* Ancho completo de la ventana */
+			height: 100%;
+			/* Alto completo de la ventana */
+			z-index: -1;
+			/* Coloca las imágenes detrás del contenido */
+		}
+
+		.bouncing-image {
+			position: absolute;
+			/* Permite mover las imágenes de forma independiente */
+			width: 100px;
+			/* Ajusta el tamaño de la imagen según sea necesario */
+			height: auto;
+			/* Mantiene la proporción de la imagen */
+		}
+
+		.content {
+			position: relative;
+			/* Permite que el contenido se posicione sobre las imágenes */
+			z-index: 1;
+			/* Asegura que el contenido esté por encima de las imágenes */
+			padding: 20px;
+			/* Espaciado alrededor del contenido */
+			text-align: center;
+			/* Centra el texto */
 		}
 
 		:root {
@@ -9789,7 +9820,34 @@
 	</style>
 </head>
 
-<body><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+<body>
+	<div class="bouncing-images">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 1" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 2" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 3" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 4" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 5" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 6" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 7" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 8" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 1" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 2" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 3" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 4" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 5" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 6" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 7" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 8" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 1" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 2" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 3" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 4" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 5" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 6" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 7" class="bouncing-image">
+		<img src="/spx6900.com/assets/images/star.png" alt="Imagen 8" class="bouncing-image">
+		<!-- Puedes añadir más imágenes si deseas -->
+	</div><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
 		viewBox="0 0 40 40" display="none" width="0" height="0">
 		<symbol id="icon-e9729d6d2de348fccdf8c1e36ac9775a" viewBox="0 0 40 40">
 			<path
@@ -9828,6 +9886,7 @@
 				d="M21.1,36.2c-6.8,0-13.5-4.9-13.5-15.9c0-11.1,6.6-15.9,13.5-15.9c3.3,0,6,0.9,7.8,2.1l-2,4.5c-1.2-0.9-3.1-1.5-5-1.5 c-4.1,0-7.8,3.2-7.8,10.7s3.9,10.8,7.8,10.8c1.9,0,3.7-0.6,5-1.5l2,4.6C27,35.4,24.4,36.2,21.1,36.2z" />
 		</symbol>
 	</svg>
+
 	<div id="wrapper">
 		<div id="main">
 			<div class="inner">
@@ -10189,6 +10248,69 @@
 						</div>
 					</div>
 				</div>
+				<script>
+					const bouncingImages = document.querySelectorAll('.bouncing-image');
+					const bounceSpeed = 2; // Ajusta la velocidad de rebote
+					let dx = []; // Arreglo para almacenar velocidades en x
+					let dy = []; // Arreglo para almacenar velocidades en y
+
+					bouncingImages.forEach((image, index) => {
+						// Posicionar cada imagen en una posición aleatoria
+						moveImage(image);
+						// Inicializar las velocidades en x e y aleatorias
+						dx[index] = bounceSpeed * (Math.random() > 0.5 ? 1 : -1); // Dirección horizontal
+						dy[index] = bounceSpeed * (Math.random() > 0.5 ? 1 : -1); // Dirección vertical
+
+						function animate() {
+							// Obtener la posición actual
+							const rect = image.getBoundingClientRect();
+
+							// Cambiar la posición de la imagen
+							image.style.left = rect.left + dx[index] + 'px';
+							image.style.top = rect.top + dy[index] + 'px';
+
+							// Verificar colisiones con los bordes de la ventana
+							if (rect.left <= 0 || rect.right >= window.innerWidth) {
+								dx[index] *= -1; // Cambiar dirección horizontal
+							}
+							if (rect.top <= 0 || rect.bottom >= window.innerHeight) {
+								dy[index] *= -1; // Cambiar dirección vertical
+							}
+
+							// Evitar que se queden pegadas en los bordes
+							if (rect.left < 0) {
+								image.style.left = '0px'; // Colocar en el borde izquierdo
+							} else if (rect.right > window.innerWidth) {
+								image.style.left = (window.innerWidth - rect.width) + 'px'; // Colocar en el borde derecho
+							}
+
+							if (rect.top < 0) {
+								image.style.top = '0px'; // Colocar en el borde superior
+							} else if (rect.bottom > window.innerHeight) {
+								image.style.top = (window.innerHeight - rect.height) + 'px'; // Colocar en el borde inferior
+							}
+
+							requestAnimationFrame(animate); // Solicitar el siguiente cuadro
+						}
+
+						animate(); // Iniciar la animación
+
+						// Cambia la posición de la imagen cada 5 segundos
+						setInterval(() => {
+							moveImage(image);
+						}, 5000); // Cambia la posición cada 5000 ms (5 segundos)
+					});
+
+					function moveImage(image) {
+						// Genera una posición aleatoria dentro de la ventana
+						const randomX = Math.random() * (window.innerWidth - 100); // Resta el ancho de la imagen
+						const randomY = Math.random() * (window.innerHeight - 100); // Resta la altura de la imagen
+
+						// Mueve la imagen a la nueva posición
+						image.style.left = randomX + 'px';
+						image.style.top = randomY + 'px';
+					}
+				</script>
 				<div id="container16" class="container columns">
 					<div class="wrapper">
 						<div class="inner">
