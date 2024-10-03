@@ -20,8 +20,8 @@
 	<meta property="og:url" content="index.html" />
 	<meta property="twitter:card" content="summary_large_image" />
 	<link rel="canonical" href="index.html" />
-	<link rel="icon" type="image/png" href="assets/images/CSSS.png" />
-	<link rel="apple-touch-icon" href="assets/images/apple-touch-icon2592.png?v=1279fde6" />
+	<link rel="icon" type="image/png" href="/spx6900.com/assets/images/CSSS.png" />
+	<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon2592.png?v=1279fde6" />
 	<style>
 		html,
 		body,
@@ -190,26 +190,43 @@
 			min-width: 320px;
 			overflow-x: hidden;
 			word-wrap: break-word;
-			background-color: #FF0000;
-			/* Rojo inicial */
-			animation: colorChange 3s infinite;
-			/* Aplicar animación */
+			position: relative;
+			/* Necesario para posicionar el pseudo-elemento */
+			color: white;
 		}
 
-		@keyframes colorChange {
-			0% {
-				background-color: #FF0000;
-			}
+		body::before {
+			content: '';
+			position: absolute;
+			/* Posiciona el pseudo-elemento de forma absoluta */
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-image: url('/spx6900.com/assets/images/fondo.png');
+			/* Agrega la imagen de fondo */
+			background-repeat: repeat;
+			/* La imagen se repetirá en toda la página */
+			background-size: auto;
+			/* Ajusta el tamaño de la imagen según sea necesario */
+			opacity: .8;
+			/* Ajusta la opacidad de la imagen (puedes cambiarlo si lo deseas) */
+			z-index: -2;
+			/* Asegura que la imagen de fondo esté detrás de la capa oscura */
+		}
 
-			/* Rojo */
-			50% {
-				background-color: #00FF00;
-			}
-
-			/* Verde */
-			100% {
-				background-color: #FF0000;
-			}
+		body::after {
+			content: '';
+			position: absolute;
+			/* Posiciona el pseudo-elemento de forma absoluta */
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(255, 0, 0, 0.5);
+			/* Capa oscura, puedes ajustar la opacidad aquí */
+			z-index: -1;
+			/* Asegura que la capa oscura esté sobre la imagen de fondo */
 		}
 
 		:root {
@@ -10020,87 +10037,90 @@
 							<li><span class="thumbnail n08"><span class="frame"><img
 											src="/spx6900.com/assets/images/gallery02/4704a5e92592.png?v=1279fde6"
 											alt="Untitled" /></span></span></li>
-											<li><span class="thumbnail n01"><span class="frame"><img
-												src="/spx6900.com/assets/images/gallery02/9511c7ce2592.png?v=1279fde6"
-												alt="Untitled" /></span></span></li>
-								<li><span class="thumbnail n02"><span class="frame"><img
-												src="/spx6900.com/assets/images/gallery02/8888888.png?v=1279fde6"
-												alt="Untitled" /></span></span></li>
-								<li><span class="thumbnail n04"><span class="frame"><img
-												src="/spx6900.com/assets/images/gallery02/ca16acca2592.png?v=1279fde6"
-												alt="Untitled" /></span></span></li>
-								<li><span class="thumbnail n05"><span class="frame"><img
-												src="/spx6900.com/assets/images/gallery02/e931111b2592.png?v=1279fde6"
-												alt="Untitled" /></span></span></li>
-								<li><span class="thumbnail n06"><span class="frame"><img
-												src="/spx6900.com/assets/images/gallery02/dbe3ae802592.png?v=1279fde6"
-												alt="Untitled" /></span></span></li>
-								<li><span class="thumbnail n07"><span class="frame"><img
-												src="/spx6900.com/assets/images/gallery02/5c51cc042592.png?v=1279fde6"
-												alt="Untitled" /></span></span></li>
-								<li><span class="thumbnail n08"><span class="frame"><img
-												src="/spx6900.com/assets/images/gallery02/4704a5e92592.png?v=1279fde6"
-												alt="Untitled" /></span></span></li><li><span class="thumbnail n01"><span class="frame"><img
-													src="/spx6900.com/assets/images/gallery02/9511c7ce2592.png?v=1279fde6"
-													alt="Untitled" /></span></span></li>
-									<li><span class="thumbnail n02"><span class="frame"><img
-													src="/spx6900.com/assets/images/gallery02/8888888.png?v=1279fde6"
-													alt="Untitled" /></span></span></li>
-									<li><span class="thumbnail n04"><span class="frame"><img
-													src="/spx6900.com/assets/images/gallery02/ca16acca2592.png?v=1279fde6"
-													alt="Untitled" /></span></span></li>
-									<li><span class="thumbnail n05"><span class="frame"><img
-													src="/spx6900.com/assets/images/gallery02/e931111b2592.png?v=1279fde6"
-													alt="Untitled" /></span></span></li>
-									<li><span class="thumbnail n06"><span class="frame"><img
-													src="/spx6900.com/assets/images/gallery02/dbe3ae802592.png?v=1279fde6"
-													alt="Untitled" /></span></span></li>
-									<li><span class="thumbnail n07"><span class="frame"><img
-													src="/spx6900.com/assets/images/gallery02/5c51cc042592.png?v=1279fde6"
-													alt="Untitled" /></span></span></li>
-									<li><span class="thumbnail n08"><span class="frame"><img
-													src="/spx6900.com/assets/images/gallery02/4704a5e92592.png?v=1279fde6"
-													alt="Untitled" /></span></span></li><li><span class="thumbnail n01"><span class="frame"><img
-														src="/spx6900.com/assets/images/gallery02/9511c7ce2592.png?v=1279fde6"
-														alt="Untitled" /></span></span></li>
-										<li><span class="thumbnail n02"><span class="frame"><img
-														src="/spx6900.com/assets/images/gallery02/8888888.png?v=1279fde6"
-														alt="Untitled" /></span></span></li>
-										<li><span class="thumbnail n04"><span class="frame"><img
-														src="/spx6900.com/assets/images/gallery02/ca16acca2592.png?v=1279fde6"
-														alt="Untitled" /></span></span></li>
-										<li><span class="thumbnail n05"><span class="frame"><img
-														src="/spx6900.com/assets/images/gallery02/e931111b2592.png?v=1279fde6"
-														alt="Untitled" /></span></span></li>
-										<li><span class="thumbnail n06"><span class="frame"><img
-														src="/spx6900.com/assets/images/gallery02/dbe3ae802592.png?v=1279fde6"
-														alt="Untitled" /></span></span></li>
-										<li><span class="thumbnail n07"><span class="frame"><img
-														src="/spx6900.com/assets/images/gallery02/5c51cc042592.png?v=1279fde6"
-														alt="Untitled" /></span></span></li>
-										<li><span class="thumbnail n08"><span class="frame"><img
-														src="/spx6900.com/assets/images/gallery02/4704a5e92592.png?v=1279fde6"
-														alt="Untitled" /></span></span></li><li><span class="thumbnail n01"><span class="frame"><img
-															src="/spx6900.com/assets/images/gallery02/9511c7ce2592.png?v=1279fde6"
-															alt="Untitled" /></span></span></li>
-											<li><span class="thumbnail n02"><span class="frame"><img
-															src="/spx6900.com/assets/images/gallery02/8888888.png?v=1279fde6"
-															alt="Untitled" /></span></span></li>
-											<li><span class="thumbnail n04"><span class="frame"><img
-															src="/spx6900.com/assets/images/gallery02/ca16acca2592.png?v=1279fde6"
-															alt="Untitled" /></span></span></li>
-											<li><span class="thumbnail n05"><span class="frame"><img
-															src="/spx6900.com/assets/images/gallery02/e931111b2592.png?v=1279fde6"
-															alt="Untitled" /></span></span></li>
-											<li><span class="thumbnail n06"><span class="frame"><img
-															src="/spx6900.com/assets/images/gallery02/dbe3ae802592.png?v=1279fde6"
-															alt="Untitled" /></span></span></li>
-											<li><span class="thumbnail n07"><span class="frame"><img
-															src="/spx6900.com/assets/images/gallery02/5c51cc042592.png?v=1279fde6"
-															alt="Untitled" /></span></span></li>
-											<li><span class="thumbnail n08"><span class="frame"><img
-															src="/spx6900.com/assets/images/gallery02/4704a5e92592.png?v=1279fde6"
-															alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n01"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/9511c7ce2592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n02"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/8888888.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n04"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/ca16acca2592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n05"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/e931111b2592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n06"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/dbe3ae802592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n07"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/5c51cc042592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n08"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/4704a5e92592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n01"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/9511c7ce2592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n02"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/8888888.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n04"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/ca16acca2592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n05"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/e931111b2592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n06"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/dbe3ae802592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n07"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/5c51cc042592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n08"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/4704a5e92592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n01"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/9511c7ce2592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n02"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/8888888.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n04"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/ca16acca2592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n05"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/e931111b2592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n06"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/dbe3ae802592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n07"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/5c51cc042592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n08"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/4704a5e92592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n01"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/9511c7ce2592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n02"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/8888888.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n04"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/ca16acca2592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n05"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/e931111b2592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n06"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/dbe3ae802592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n07"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/5c51cc042592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
+							<li><span class="thumbnail n08"><span class="frame"><img
+											src="/spx6900.com/assets/images/gallery02/4704a5e92592.png?v=1279fde6"
+											alt="Untitled" /></span></span></li>
 						</ul>
 					</div>
 				</div>
