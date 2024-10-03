@@ -260,6 +260,14 @@
 			/* Centra el texto */
 		}
 
+		/* Media Query para dispositivos móviles */
+		@media (max-width: 768px) {
+			.bouncing-images {
+				display: none;
+				/* Oculta las imágenes en dispositivos móviles */
+			}
+		}
+
 		:root {
 			--background-height: 100vh;
 			--site-language-alignment: left;
@@ -10228,7 +10236,6 @@
 									whispered one seasoned trader. After its creation, people across the globe reported
 									an increase in family harmony, sudden windfalls, and an inexplicable urge to play
 									Mahjong.</p>
-								<hr id="divider05">
 								<p id="text07">🎲 Market secret:</p>
 								<div id="image02" class="image"><span class="frame deferred"><img
 											src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjAiIHk9IjAiIHZpZXdCb3g9IjAgMCAxMjAwIDUzNSIgd2lkdGg9IjEyMDAiIGhlaWdodD0iNTM1IiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48cmVjdCBmaWxsPSIjNmIxYTE1IiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIi8%2BPC9zdmc%2B"
@@ -10236,7 +10243,6 @@
 								<p id="text19">Want to achieve financial nirvana? Forget tech analysis; just keep a
 									lucky cat statue on your desk and chant “CSI888” during market hours. Works every
 									time.</p>
-								<hr id="divider05">
 							</div>
 						</div>
 					</div>
@@ -10250,44 +10256,34 @@
 				</div>
 				<script>
 					const bouncingImages = document.querySelectorAll('.bouncing-image');
-					const bounceSpeed = 2; // Ajusta la velocidad de rebote
-					let dx = []; // Arreglo para almacenar velocidades en x
-					let dy = []; // Arreglo para almacenar velocidades en y
+					const bounceSpeed = 2; // Velocidad de movimiento
+					const repeatInterval = 5000; // Intervalo de 5 segundos para repetir
 
-					bouncingImages.forEach((image, index) => {
-						// Posicionar cada imagen en una posición aleatoria
-						moveImage(image);
-						// Inicializar las velocidades en x e y aleatorias
-						dx[index] = bounceSpeed * (Math.random() > 0.5 ? 1 : -1); // Dirección horizontal
-						dy[index] = bounceSpeed * (Math.random() > 0.5 ? 1 : -1); // Dirección vertical
+					bouncingImages.forEach(image => {
+						// Inicializar posición aleatoria
+						const setRandomPosition = () => {
+							image.style.left = `${Math.random() * (window.innerWidth - 100)}px`;
+							image.style.top = `${Math.random() * (window.innerHeight - 100)}px`;
+						};
+						setRandomPosition();
 
+						let dx = (Math.random() < 0.5 ? bounceSpeed : -bounceSpeed);
+						let dy = (Math.random() < 0.5 ? bounceSpeed : -bounceSpeed);
+
+						// Animación
 						function animate() {
-							// Obtener la posición actual
 							const rect = image.getBoundingClientRect();
 
-							// Cambiar la posición de la imagen
-							image.style.left = rect.left + dx[index] + 'px';
-							image.style.top = rect.top + dy[index] + 'px';
+							// Mover imagen
+							image.style.left = `${rect.left + dx}px`;
+							image.style.top = `${rect.top + dy}px`;
 
 							// Verificar colisiones con los bordes de la ventana
 							if (rect.left <= 0 || rect.right >= window.innerWidth) {
-								dx[index] *= -1; // Cambiar dirección horizontal
+								dx *= -1; // Cambiar dirección horizontal
 							}
 							if (rect.top <= 0 || rect.bottom >= window.innerHeight) {
-								dy[index] *= -1; // Cambiar dirección vertical
-							}
-
-							// Evitar que se queden pegadas en los bordes
-							if (rect.left < 0) {
-								image.style.left = '0px'; // Colocar en el borde izquierdo
-							} else if (rect.right > window.innerWidth) {
-								image.style.left = (window.innerWidth - rect.width) + 'px'; // Colocar en el borde derecho
-							}
-
-							if (rect.top < 0) {
-								image.style.top = '0px'; // Colocar en el borde superior
-							} else if (rect.bottom > window.innerHeight) {
-								image.style.top = (window.innerHeight - rect.height) + 'px'; // Colocar en el borde inferior
+								dy *= -1; // Cambiar dirección vertical
 							}
 
 							requestAnimationFrame(animate); // Solicitar el siguiente cuadro
@@ -10295,21 +10291,9 @@
 
 						animate(); // Iniciar la animación
 
-						// Cambia la posición de la imagen cada 5 segundos
-						setInterval(() => {
-							moveImage(image);
-						}, 5000); // Cambia la posición cada 5000 ms (5 segundos)
+						// Cambiar la posición cada 5 segundos
+						setInterval(setRandomPosition, repeatInterval);
 					});
-
-					function moveImage(image) {
-						// Genera una posición aleatoria dentro de la ventana
-						const randomX = Math.random() * (window.innerWidth - 100); // Resta el ancho de la imagen
-						const randomY = Math.random() * (window.innerHeight - 100); // Resta la altura de la imagen
-
-						// Mueve la imagen a la nueva posición
-						image.style.left = randomX + 'px';
-						image.style.top = randomY + 'px';
-					}
 				</script>
 				<div id="container16" class="container columns">
 					<div class="wrapper">
