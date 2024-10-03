@@ -5002,43 +5002,6 @@
 			z-index: 1;
 		}
 
-		#gallery02 {
-			text-align: center;
-		}
-
-		#gallery02 .inner {
-			max-width: 100%;
-		}
-
-		#gallery02 ul {
-			justify-content: center;
-			gap: 0.25rem;
-		}
-
-		#gallery02 ul li {
-			border-radius: 0rem;
-			display: inline-block;
-		}
-
-		#gallery02 ul li .frame {
-			border-radius: 0rem;
-		}
-
-		#gallery02 ul li .thumbnail {
-			display: block;
-			transition: filter 0.25s ease;
-			filter: brightness(100%);
-		}
-
-		#gallery02 ul li img {
-			height: auto;
-			max-height: 3.625rem;
-		}
-
-		#gallery02 ul li .thumbnail:hover {
-			filter: brightness(150%);
-		}
-
 		#gallery06 {
 			text-align: center;
 		}
@@ -8910,10 +8873,6 @@
 				max-height: 4.5rem;
 			}
 
-			#gallery02 ul li img {
-				max-height: 2.71875rem;
-			}
-
 			#gallery06 ul li img {
 				max-height: 5.0625rem;
 			}
@@ -9744,9 +9703,6 @@
 				gap: 0.1875rem;
 			}
 
-			#gallery02 ul {
-				gap: 0.1875rem;
-			}
 
 			#gallery06 ul {
 				gap: 0.1875rem;
@@ -9881,8 +9837,7 @@
 														class="frame"><img
 															src="/spx6900.com/assets/images/gallery03/d21a86d62592.png?v=1279fde6"
 															alt="Untitled" /></span></a></li>
-											<li><a href="https://t.me" class="thumbnail n02"><span
-														class="frame"><img
+											<li><a href="https://t.me" class="thumbnail n02"><span class="frame"><img
 															src="/spx6900.com/assets/images/gallery03/78b6292c2592.png?v=1279fde6"
 															alt="Untitled" /></span></a></li>
 										</ul>
@@ -9901,7 +9856,8 @@
 							<div>
 								<ul id="links04" class="links" data-visibility="desktop">
 									<li class="n01">
-										<a href="https://x.com" target="_blank">CSI888 狂熱達到前所未有的巔峰，只需轉幾次，就能被它的瘋狂之旅吸引住。</a>
+										<a href="https://x.com" target="_blank">CSI888
+											狂熱達到前所未有的巔峰，只需轉幾次，就能被它的瘋狂之旅吸引住。</a>
 									</li>
 									<li class="n04">
 										<a href="https://t.me/" target="_blank">PUMPFUN</a>
@@ -9909,7 +9865,8 @@
 								</ul>
 								<ul id="links03" class="links" data-visibility="mobile">
 									<li class="n01">
-										<a href="https://x.com" target="_blank">CSI888 狂熱達到前所未有的巔峰，只需轉幾次，就能被它的瘋狂之旅吸引住。</a>
+										<a href="https://x.com" target="_blank">CSI888
+											狂熱達到前所未有的巔峰，只需轉幾次，就能被它的瘋狂之旅吸引住。</a>
 									</li>
 									<li class="n04">
 										<a href="https://t.me/" target="_blank">PUMPFUN</a>
@@ -9919,7 +9876,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<div id="container03" class="container default full screen">
 					<div class="wrapper">
 						<div class="inner">
@@ -9980,9 +9937,68 @@
 
 					</html>
 				</div>
+				<style>
+					.gallery {
+						position: relative;
+						overflow: hidden;
+						width: 100%;
+
+					}
+
+					.carousel {
+						display: flex;
+						justify-content: center;
+						/* Centra los elementos hijos */
+						animation: scroll 25 s linear infinite;
+						/* Cambia 10s a 15s para un ciclo de desplazamiento más lento */
+						width: calc(100% * 8);
+						/* Cambia 8 por el número de imágenes */
+						/* Definir la animación para un reinicio rápido */
+						animation: scroll 25s linear infinite;
+					}
+
+					.carousel li {
+						list-style-type: none;
+						margin: 0 10px;
+						/* Espacio entre las imágenes */
+						flex: 0 0 auto;
+						/* Mantiene el tamaño de cada imagen */
+					}
+
+					.gallery .frame img {
+						max-width: 80%;
+						/* Ajusta el tamaño de la imagen al 80% del contenedor */
+						max-height: 120px;
+						/* Limita la altura máxima de las imágenes */
+						height: auto;
+						/* Mantiene la proporción */
+					}
+
+					@keyframes scroll {
+						0% {
+							transform: translateX(0);
+						}
+
+						100% {
+							transform: translateX(-100%);
+							/* Cambia el valor según el número de imágenes */
+						}
+					}
+				</style>
+				<script>
+					const carousel = document.getElementById('carousel');
+
+					carousel.addEventListener('mouseover', () => {
+						carousel.style.animationPlayState = 'paused';
+					});
+
+					carousel.addEventListener('mouseout', () => {
+						carousel.style.animationPlayState = 'running';
+					});
+				</script>
 				<div id="gallery02" class="gallery full">
-					<div class="inner"> 
-						<ul>
+					<div class="inner">
+						<ul id="carousel" class="carousel">
 							<li><span class="thumbnail n01"><span class="frame"><img
 											src="/spx6900.com/assets/images/gallery02/9511c7ce2592.png?v=1279fde6"
 											alt="Untitled" /></span></span></li>
@@ -10004,10 +10020,90 @@
 							<li><span class="thumbnail n08"><span class="frame"><img
 											src="/spx6900.com/assets/images/gallery02/4704a5e92592.png?v=1279fde6"
 											alt="Untitled" /></span></span></li>
+											<li><span class="thumbnail n01"><span class="frame"><img
+												src="/spx6900.com/assets/images/gallery02/9511c7ce2592.png?v=1279fde6"
+												alt="Untitled" /></span></span></li>
+								<li><span class="thumbnail n02"><span class="frame"><img
+												src="/spx6900.com/assets/images/gallery02/8888888.png?v=1279fde6"
+												alt="Untitled" /></span></span></li>
+								<li><span class="thumbnail n04"><span class="frame"><img
+												src="/spx6900.com/assets/images/gallery02/ca16acca2592.png?v=1279fde6"
+												alt="Untitled" /></span></span></li>
+								<li><span class="thumbnail n05"><span class="frame"><img
+												src="/spx6900.com/assets/images/gallery02/e931111b2592.png?v=1279fde6"
+												alt="Untitled" /></span></span></li>
+								<li><span class="thumbnail n06"><span class="frame"><img
+												src="/spx6900.com/assets/images/gallery02/dbe3ae802592.png?v=1279fde6"
+												alt="Untitled" /></span></span></li>
+								<li><span class="thumbnail n07"><span class="frame"><img
+												src="/spx6900.com/assets/images/gallery02/5c51cc042592.png?v=1279fde6"
+												alt="Untitled" /></span></span></li>
+								<li><span class="thumbnail n08"><span class="frame"><img
+												src="/spx6900.com/assets/images/gallery02/4704a5e92592.png?v=1279fde6"
+												alt="Untitled" /></span></span></li><li><span class="thumbnail n01"><span class="frame"><img
+													src="/spx6900.com/assets/images/gallery02/9511c7ce2592.png?v=1279fde6"
+													alt="Untitled" /></span></span></li>
+									<li><span class="thumbnail n02"><span class="frame"><img
+													src="/spx6900.com/assets/images/gallery02/8888888.png?v=1279fde6"
+													alt="Untitled" /></span></span></li>
+									<li><span class="thumbnail n04"><span class="frame"><img
+													src="/spx6900.com/assets/images/gallery02/ca16acca2592.png?v=1279fde6"
+													alt="Untitled" /></span></span></li>
+									<li><span class="thumbnail n05"><span class="frame"><img
+													src="/spx6900.com/assets/images/gallery02/e931111b2592.png?v=1279fde6"
+													alt="Untitled" /></span></span></li>
+									<li><span class="thumbnail n06"><span class="frame"><img
+													src="/spx6900.com/assets/images/gallery02/dbe3ae802592.png?v=1279fde6"
+													alt="Untitled" /></span></span></li>
+									<li><span class="thumbnail n07"><span class="frame"><img
+													src="/spx6900.com/assets/images/gallery02/5c51cc042592.png?v=1279fde6"
+													alt="Untitled" /></span></span></li>
+									<li><span class="thumbnail n08"><span class="frame"><img
+													src="/spx6900.com/assets/images/gallery02/4704a5e92592.png?v=1279fde6"
+													alt="Untitled" /></span></span></li><li><span class="thumbnail n01"><span class="frame"><img
+														src="/spx6900.com/assets/images/gallery02/9511c7ce2592.png?v=1279fde6"
+														alt="Untitled" /></span></span></li>
+										<li><span class="thumbnail n02"><span class="frame"><img
+														src="/spx6900.com/assets/images/gallery02/8888888.png?v=1279fde6"
+														alt="Untitled" /></span></span></li>
+										<li><span class="thumbnail n04"><span class="frame"><img
+														src="/spx6900.com/assets/images/gallery02/ca16acca2592.png?v=1279fde6"
+														alt="Untitled" /></span></span></li>
+										<li><span class="thumbnail n05"><span class="frame"><img
+														src="/spx6900.com/assets/images/gallery02/e931111b2592.png?v=1279fde6"
+														alt="Untitled" /></span></span></li>
+										<li><span class="thumbnail n06"><span class="frame"><img
+														src="/spx6900.com/assets/images/gallery02/dbe3ae802592.png?v=1279fde6"
+														alt="Untitled" /></span></span></li>
+										<li><span class="thumbnail n07"><span class="frame"><img
+														src="/spx6900.com/assets/images/gallery02/5c51cc042592.png?v=1279fde6"
+														alt="Untitled" /></span></span></li>
+										<li><span class="thumbnail n08"><span class="frame"><img
+														src="/spx6900.com/assets/images/gallery02/4704a5e92592.png?v=1279fde6"
+														alt="Untitled" /></span></span></li><li><span class="thumbnail n01"><span class="frame"><img
+															src="/spx6900.com/assets/images/gallery02/9511c7ce2592.png?v=1279fde6"
+															alt="Untitled" /></span></span></li>
+											<li><span class="thumbnail n02"><span class="frame"><img
+															src="/spx6900.com/assets/images/gallery02/8888888.png?v=1279fde6"
+															alt="Untitled" /></span></span></li>
+											<li><span class="thumbnail n04"><span class="frame"><img
+															src="/spx6900.com/assets/images/gallery02/ca16acca2592.png?v=1279fde6"
+															alt="Untitled" /></span></span></li>
+											<li><span class="thumbnail n05"><span class="frame"><img
+															src="/spx6900.com/assets/images/gallery02/e931111b2592.png?v=1279fde6"
+															alt="Untitled" /></span></span></li>
+											<li><span class="thumbnail n06"><span class="frame"><img
+															src="/spx6900.com/assets/images/gallery02/dbe3ae802592.png?v=1279fde6"
+															alt="Untitled" /></span></span></li>
+											<li><span class="thumbnail n07"><span class="frame"><img
+															src="/spx6900.com/assets/images/gallery02/5c51cc042592.png?v=1279fde6"
+															alt="Untitled" /></span></span></li>
+											<li><span class="thumbnail n08"><span class="frame"><img
+															src="/spx6900.com/assets/images/gallery02/4704a5e92592.png?v=1279fde6"
+															alt="Untitled" /></span></span></li>
 						</ul>
 					</div>
 				</div>
-				<hr id="divider07" data-visibility="desktop">
 				<div id="container07" data-scroll-id="scan" data-scroll-behavior="default" data-scroll-offset="0"
 					data-scroll-speed="3" data-scroll-invisible="1" class="container columns">
 					<div class="wrapper">
@@ -10021,27 +10117,46 @@
 							<div>
 								<p id="text07">🚨 BREAKING NEWS: CSI 888 GOING VERTICAL! 🚀🚀 🚨</p>
 								<p id="text18"><span class="p">
-									Straight from the People’s Bank of China, Mr. Yuan and his legendary green tea energy have blessed the markets once again. The CSI 1000 is up so high, it’s practically reaching the moon—and that’s not a metaphor. Rumor has it, astronauts on the International Space Station are already preparing landing pads for stocks that are going interstellar. CSI 888 “super deluxe lucky” 1000x multiplier— WAGMI. “I can feel my ancestors smiling upon me,” said one investor, holding onto his share certificates like he’s clutching the last dumpling in the pot. “CSI888 is no longer a market, it’s an ascension ritual!”
+										Straight from the People’s Bank of China, Mr. Yuan and his legendary green tea
+										energy have blessed the markets once again. The CSI 1000 is up so high, it’s
+										practically reaching the moon—and that’s not a metaphor. Rumor has it,
+										astronauts on the International Space Station are already preparing landing pads
+										for stocks that are going interstellar. CSI 888 “super deluxe lucky” 1000x
+										multiplier— WAGMI. “I can feel my ancestors smiling upon me,” said one investor,
+										holding onto his share certificates like he’s clutching the last dumpling in the
+										pot. “CSI888 is no longer a market, it’s an ascension ritual!”
 									</span></p>
-									<p id="text07">
-										💰 CSI888 Coin: Federal Reserve Announces Radical Plan 💰</p>
-									<p id="text18"><span class="p">
-										BREAKING: The Federal Reserve has unveiled a jaw-dropping plan to replace all dollar bills with digital CSI888 coins. That’s right, your wallet will soon be filled with CSI vibes instead of those outdated, wrinkled Washingtons. Jerome Powell himself hit the print button—but for digital coins, not cash, because the future is here and it’s full of digits, charts, and vertical lines.
+								<p id="text07">
+									💰 CSI888 Coin: Federal Reserve Announces Radical Plan 💰</p>
+								<p id="text18"><span class="p">
+										BREAKING: The Federal Reserve has unveiled a jaw-dropping plan to replace all
+										dollar bills with digital CSI888 coins. That’s right, your wallet will soon be
+										filled with CSI vibes instead of those outdated, wrinkled Washingtons. Jerome
+										Powell himself hit the print button—but for digital coins, not cash, because the
+										future is here and it’s full of digits, charts, and vertical lines.
 
-										Banks, of course, are confused, but don’t worry: “National CSI Day” is already trending on Weibo, and it’s rumored that the first person to hodl a CSI888 coin will be blessed with eternal financial wisdom.										</span></p>
+										Banks, of course, are confused, but don’t worry: “National CSI Day” is already
+										trending on Weibo, and it’s rumored that the first person to hodl a CSI888 coin
+										will be blessed with eternal financial wisdom. </span></p>
 							</div>
 							<div>
 								<p id="text07">🧧 CSI888: Super Lucky, Wealth Long Time 🧧</p>
 								<div id="image02" class="image"><span class="frame deferred"><img
 											src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjAiIHk9IjAiIHZpZXdCb3g9IjAgMCAxMjAwIDUzNSIgd2lkdGg9IjEyMDAiIGhlaWdodD0iNTM1IiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48cmVjdCBmaWxsPSIjNmIxYTE1IiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIi8%2BPC9zdmc%2B"
 											data-src="assets/images/image02.jpg?v=1279fde6" alt="" /></span></div>
-								<p id="text19">Introducing the CSI 888, the index so lucky that investors are thinking of renaming their children after it. “888 means triple wealth, fortune forever,” whispered one seasoned trader. After its creation, people across the globe reported an increase in family harmony, sudden windfalls, and an inexplicable urge to play Mahjong.</p>
+								<p id="text19">Introducing the CSI 888, the index so lucky that investors are thinking
+									of renaming their children after it. “888 means triple wealth, fortune forever,”
+									whispered one seasoned trader. After its creation, people across the globe reported
+									an increase in family harmony, sudden windfalls, and an inexplicable urge to play
+									Mahjong.</p>
 								<hr id="divider05">
 								<p id="text07">🎲 Market secret:</p>
 								<div id="image02" class="image"><span class="frame deferred"><img
 											src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjAiIHk9IjAiIHZpZXdCb3g9IjAgMCAxMjAwIDUzNSIgd2lkdGg9IjEyMDAiIGhlaWdodD0iNTM1IiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48cmVjdCBmaWxsPSIjNmIxYTE1IiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIi8%2BPC9zdmc%2B"
 											data-src="assets/images/image02.jpg?v=1279fde6" alt="" /></span></div>
-								<p id="text19">Want to achieve financial nirvana? Forget tech analysis; just keep a lucky cat statue on your desk and chant “CSI888” during market hours. Works every time.</p>
+								<p id="text19">Want to achieve financial nirvana? Forget tech analysis; just keep a
+									lucky cat statue on your desk and chant “CSI888” during market hours. Works every
+									time.</p>
 								<hr id="divider05">
 							</div>
 						</div>
@@ -10058,20 +10173,19 @@
 					<div class="wrapper">
 						<div class="inner">
 							<div>
-								<p id="text56">CSI888 Declares Itself Self-Aware, Demands Equal Rights for Slot Machines
-									Everywhere</p>
+								<p id="text56">CSI888 Soars So High, NASA Files Complaint for Airspace Violation</p>
 								<hr id="divider13" data-visibility="mobile">
 							</div>
 							<div>
 								<hr id="divider23" data-visibility="mobile">
-								<p id="text58">Las Vegas Casinos Panic as CSI888 Announces Its Own Cryptocurrency:
-									"JackpotCoin"</p>
+								<p id="text58">Trade CSI888, Instantly Max Out Your Social Credit Score—Unlock VIP
+									Access to Xi’s Secret Hotpot Party!</p>
 								<hr id="divider24" data-visibility="mobile">
 							</div>
 							<div>
 								<hr id="divider25" data-visibility="mobile">
-								<p id="text59"><span class="p">Scientists Warn: CSI888 May Be Smarter Than Your Average
-										Human, Still Terrible at Small Talk</span></p>
+								<p id="text59"><span class="p">Trade CSI888, Earn ‘Supreme Leader’s Favorite’
+										Status—Access to Forbidden City Not Included</span></p>
 								<hr id="divider26" data-visibility="mobile">
 							</div>
 							<div>
@@ -10093,9 +10207,12 @@
 				<div id="container04" class="container default">
 					<div class="wrapper">
 						<div class="inner">
-							<p id="text54"><em><strong> This is the CSI888 era. A world where green candlesticks reach higher than the Great Wall. A place where gains are super lucky and losses are just urban legends told to scare children.
+							<p id="text54"><em><strong> This is the CSI888 era. A world where green candlesticks reach
+										higher than the Great Wall. A place where gains are super lucky and losses are
+										just urban legends told to scare children.
 
-								Forget economic downturns; we’re talking sky-high financial feng shui—all in one index to rule them all.</strong></p>
+										Forget economic downturns; we’re talking sky-high financial feng shui—all in one
+										index to rule them all.</strong></p>
 						</div>
 					</div>
 				</div>
@@ -10112,32 +10229,38 @@
 							<div>
 								<p id="text24"><span style="color: #FF3838">CSI888</span> Originals</p>
 								<div id="image14" class="image">
-									<img src="/spx6900.com/assets/images/css111.png" alt="Descripción de la imagen" 
-										 poster="assets/videos/video14.mp42592.jpg?v=1279fde6" preload="auto" style="width: 100%; height: auto;" />
+									<img src="/spx6900.com/assets/images/css111.png" alt="Descripción de la imagen"
+										poster="assets/videos/video14.mp42592.jpg?v=1279fde6" preload="auto"
+										style="width: 100%; height: auto;" />
 								</div>
 								<p id="text21">Stop trading and believe in something!</p>
 							</div>
 							<div>
 
 								<div id="image14" class="image">
-									<img src="/spx6900.com/assets/images/css111.png" alt="Descripción de la imagen" 
-										 poster="assets/videos/video14.mp42592.jpg?v=1279fde6" preload="auto" style="width: 100%; height: auto;" />
+									<img src="/spx6900.com/assets/images/css111.png" alt="Descripción de la imagen"
+										poster="assets/videos/video14.mp42592.jpg?v=1279fde6" preload="auto"
+										style="width: 100%; height: auto;" />
 								</div>
 								<p id="text21">Stop trading and believe in something!</p>
 							</div>
 							<div>
 
 								<div id="image14" class="image">
-									<img src="/spx6900.com/assets/images/photo_5184011203012308596_y.jpg" alt="Descripción de la imagen" 
-										 poster="/spx6900.com/assets/images/photo_5184011203012308596_y.jpg" preload="auto" style="width: 100%; height: auto;" />
+									<img src="/spx6900.com/assets/images/photo_5184011203012308596_y.jpg"
+										alt="Descripción de la imagen"
+										poster="/spx6900.com/assets/images/photo_5184011203012308596_y.jpg"
+										preload="auto" style="width: 100%; height: auto;" />
 								</div>
 								<p id="text21">SUPREME LEADER</p>
 							</div>
 							<div>
 
 								<div id="image14" class="image">
-									<img src="/spx6900.com/assets/images/photo_5184011203012308595_y.jpg" alt="Descripción de la imagen" 
-										 poster="/spx6900.com/assets/images/photo_5184011203012308595_y.jpg" preload="auto" style="width: 100%; height: auto;" />
+									<img src="/spx6900.com/assets/images/photo_5184011203012308595_y.jpg"
+										alt="Descripción de la imagen"
+										poster="/spx6900.com/assets/images/photo_5184011203012308595_y.jpg"
+										preload="auto" style="width: 100%; height: auto;" />
 								</div>
 								<p id="text21">CSI888!</p>
 							</div>
